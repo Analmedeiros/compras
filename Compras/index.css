@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    user-select: none;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+:root {
+    /* Utilização de variáveis */
+    --cor-primaria: rgb(238, 122, 244);
+    --cor-segundaria: rgb(0, 0, 0);
+    --cor-fundo: #d1edf2;
+}
+
+body {
+    /* Alinhar os elementos da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #e6f4f7;;
+}
+
+/* Retângulo branco */
+.carrinho {
+    width: 450px;
+    height: min-content;
+    background: #fff;
+    padding: 35px;
+}
+
+/* "Meu carrinho" */
+.cabecalho-carrinho {
+    display: flex;
+}
+
+/* Botão de voltar */
+.cabecalho-carrinho button {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
+    line-height: 50%; /* Função para deixar no centro */
+    color: #280096;
+    background: #ddddde50;
+    border: 2px solid #ddddde;
+    border-radius: 8px;
+}
+
+/* Passar o mouse por cima */
+.cabecalho-carrinho button:hover {
+    color: #fff;
+    background: #394199;
+    border-color: #280096;
+}
+
+/* h3 do meu carrinho */
+.carrinho .cabecalho-carrinho h3 {
+    margin: auto;
+    text-align: center;
+    font: 400 1.25rem Arial, sans-serif;
+    color: #394199;
+}
+
+.carrinho .carrinho-item1 {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin: 30px 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 18px #2a2f430f;
+}
+
+.carrinho .carrinho-item1 .imagem {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.carrinho .carrinho-item1 img {
+    width: 90%;
+    transition: transform 0.3s; /* Adiciona uma transição suave de 0.3 segundos para o efeito de zoom */
+}
+
+/* Efeito de zoom quando o mouse passa por cima da imagem */
+.carrinho .carrinho-item1 img:hover {
+    transform: scale(1.1); /* Aumenta a escala da imagem em 10% quando o mouse passa por cima */
+}
+
+.carrinho .carrinho-item1 .info {
+    padding: 14px;
+    width: 70%;
+}
+
+.carrinho .carrinho-item1 .info h4 {
+    font-size: 18px;
+}
+
+.carrinho .carrinho-item1 h4 {
+    color: #933999;
+    font: 400 1.25rem Arial, sans-serif;
+    white-space: nowrap;
+}
+
+.carrinho .carrinho-item1 .descricao {
+    white-space: nowrap;
+    font: Arial, sans-serif;
+    color: rgb(66, 66, 66);
+    margin-top: 10px;
+}
+
+.carrinho .carrinho-item1 .preco {
+    color: #960000;
+    font: Arial, sans-serif;
+    font-size: 18px;
+    margin-top: 40px;
+}
+
+.carrinho .carrinho-item1 .contador {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    color: black;
+}
+
+.carrinho .carrinho-item1 .contador i {
+    cursor: pointer;
+    width: 25px;
+    height: 30px;
+    background: #933999;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 8px 8px 0 0;
+}
+
+.carrinho .carrinho-item1 .contador span {
+    margin: 0 6px;
+}
+
+/* Regra de mídia para limitar o tamanho da imagem apenas em telas pequenas */
+@media (max-width: 768px) {
+    .carrinho .carrinho-item1 img {
+        max-width: 100%; /* Defina uma largura máxima de 100% somente em telas pequenas */
+    }
+}
+/*logo*/
+.logo img {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    max-width: 100%; 
+    max-height: 100%; 
+}
+
+/* Estilize os botões de alternância de tema */
+.theme-toggle {
+    position: absolute;
+    top: 40px;
+    right: 10px; 
+    max-width: 100%;
+    max-height: 100%; 
+}
+
+.theme-toggle button {
+    padding: 10px 20px;
+    background-color: var(--cor-primaria);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle button:hover {
+    background-color: var(--cor-segundaria);
+}
+
+/* Estilos para o modo escuro */
+body.dark-mode {
+    background-color: #1e1e1e; /* Cor de fundo escura */
+    color: #fff; /* Cor do texto em modo escuro */
+}
+
+/*botão do total da compra*/
+
+.carrinho .total {
+    font: 500 1rem Arial, sans-serif;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px 0;
+    color: #fff;
+    background: #933999;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+.carrinho .total:hover{
+    background: #4b4b4b;
+}
